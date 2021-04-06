@@ -1,4 +1,9 @@
 <form (ngSubmit)='submit()'>
-    <input name="nombre" type='text' [(ngModel)]="nombre">
+    <input name="nombre"type='text' [(ngModel)]="nombre">
     <input type='submit'>
 </form>
+
+    <div *ngFor='let item of resultadoBusq'>
+        <p *ngIf="nombre == this.resultadoBusq[0].name">Nombre: {{item.name}}</p>
+    </div>
+    <app-listado-categorias *ngIf="!bExito || nombre != this.resultadoBusq[0].name"></app-listado-categorias>
