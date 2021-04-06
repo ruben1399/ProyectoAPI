@@ -17,12 +17,8 @@ bExito= false;
   }
    async submit (){
     this.resultadoBusq= await this.categorias.getCategoryName(this.nombre);
-    console.log()
     if(this.resultadoBusq[0].name == this.nombre){
       this.bExito=true;
-    } else {
-      this.nombre="";
-      this.bExito=false;
     }
     
   }
