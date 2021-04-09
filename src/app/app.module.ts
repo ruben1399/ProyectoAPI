@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListadoCategoriasComponent } from './component/listado-categorias/listado-categorias.component';
 import { BuscadorComponent } from './component/buscador/buscador.component';
 import { FormsModule } from '@angular/forms';
+import { EditarCategoriaComponent } from './component/editar-categoria/editar-categoria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoCategoriasComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    EditarCategoriaComponent
   ],
   imports: [
     BrowserModule,

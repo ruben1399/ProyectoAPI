@@ -8,11 +8,12 @@ import { CategoriasService } from 'src/app/services/categorias.service';
   styleUrls: ['./listado-categorias.component.scss']
 })
 export class ListadoCategoriasComponent implements OnInit {
-arrayCategories: Categorias[];
+  arrayCategories: Categorias[];
   constructor(private sCategorias: CategoriasService) { }
 
   async ngOnInit(): Promise<void> {
-    this.arrayCategories= await this.sCategorias.getAllCategories();
+    this.arrayCategories = await this.sCategorias.getAllCategories();
   }
 
 }
+
