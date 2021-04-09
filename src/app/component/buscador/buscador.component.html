@@ -1,9 +1,24 @@
-<form (ngSubmit)='submit()'>
-    <input name="nombre"type='text' [(ngModel)]="nombre">
-    <input type='submit'>
-</form>
+  <!-- Cabecera -->
+  <div class="container">
+    <h1 style="color: #303F9F;">
+      <i class="pi pi-user" style="font-size: 2rem"></i>
+      Buscar Cliente</h1>
+    <hr class="my-4">
+  </div>
+  <!-- Cabecera -->
+
+
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <form (ngSubmit)='submit()'>
+        <input name="nombre" type='text' [(ngModel)]="nombre">
+        <input type='submit'>
+      </form>
+    </div>
 
     <div *ngFor='let item of resultadoBusq'>
-        <p *ngIf="nombre == this.resultadoBusq[0].name">Nombre: {{item.name}}</p>
+      <p class="row justify-content-center m-2" *ngIf="nombre == this.resultadoBusq[0].name" style="border: 1px  solid black;">Nombre: {{item.name}}</p>
     </div>
+
     <app-listado-categorias *ngIf="!bExito || nombre != this.resultadoBusq[0].name"></app-listado-categorias>
