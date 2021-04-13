@@ -13,11 +13,11 @@ const routes: Routes = [
    {
      path: 'editar/:id',
      component: EditarCategoriaComponent
+   },
+   {
+     path: 'eliminar/:id',
+     component: BuscadorComponent
    }
-  // {
-  //   path: 'eliminar/:id',
-  //   component: ListadoCategoriasComponent
-  // }
 ];
 
 @NgModule({

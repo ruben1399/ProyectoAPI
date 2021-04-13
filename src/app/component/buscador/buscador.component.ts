@@ -9,26 +9,30 @@ import { CategoriasService } from 'src/app/services/categorias.service';
 })
 export class BuscadorComponent implements OnInit {
   id: number;
-  nombre:string;
-resultadoBusq: Categorias
-bExito= false;
+  nombre: string;
+  resultadoBusq: Categorias;
+  bExito = false;
+  bRecarga=false;
   constructor(private categorias: CategoriasService) { }
 
   ngOnInit(): void {
   }
-   async submit (){
-    this.resultadoBusq= await this.categorias.getCategoryName(this.nombre);
-    if(this.resultadoBusq[0].name == this.nombre){
-      this.bExito=true;
+  async submit() {
+    this.bRecarga=false;
+    this.resultadoBusq = await this.categorias.getCategoryName(this.nombre);
+    if (this.resultadoBusq[0].name == this.nombre) {
+      this.bExito = true;
     }
-    
+
   }
 
-  async eliminar (){
-    await this.categorias.deleteCategory(this.resultadoBusq[0].id);
-    if(this.resultadoBusq[0].id == this.id){
-      this.bExito=true;
-    }
+  async eliminar(resultBusq: Number) {
     
+    await this.categorias.deleteCategory(resultBusq);
+    this.resultadoBusq[0]= await this.categorias.getAllCategories();
+    this.bRecarga=true;
+    
+
   }
+
 }

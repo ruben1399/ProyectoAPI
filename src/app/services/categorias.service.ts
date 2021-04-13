@@ -25,10 +25,12 @@ export class CategoriasService {
     return categoria;
   }
   async updateCategory(category: Categorias): Promise<Categorias> {
-    return await this.http.patch<Categorias>(environment.apiurl +'/'+ category.id, category).toPromise();
+    return await this.http.patch<Categorias>(environment.apiurl + '/' + category.id, category).toPromise();
   }
-  async deleteCategory(category: Categorias): Promise<void> {
-    await this.http.delete<Categorias>(environment.apiurl + '/' + category.id).toPromise();
+
+  async deleteCategory(resulBusq: Number): Promise<void> {
+    const path = environment.apiurl + '/' + resulBusq;
+    await this.http.delete(path).toPromise();
   }
 }
 
