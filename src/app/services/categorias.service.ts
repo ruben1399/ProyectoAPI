@@ -32,5 +32,8 @@ export class CategoriasService {
     const path = environment.apiurl + '/' + resulBusq;
     await this.http.delete(path).toPromise();
   }
+  async addCategory(Categorias: Categorias): Promise<void> {
+    this.http.post(environment.apiurl + '/' , Categorias)
+  }
 }
 

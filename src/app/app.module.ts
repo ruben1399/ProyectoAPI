@@ -8,13 +8,15 @@ import { ListadoCategoriasComponent } from './component/listado-categorias/lista
 import { BuscadorComponent } from './component/buscador/buscador.component';
 import { FormsModule } from '@angular/forms';
 import { EditarCategoriaComponent } from './component/editar-categoria/editar-categoria.component';
+import { CrearCategoriaComponent } from './component/crear-categoria/crear-categoria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoCategoriasComponent,
     BuscadorComponent,
-    EditarCategoriaComponent
+    EditarCategoriaComponent,
+    CrearCategoriaComponent
   ],
   imports: [
     BrowserModule,
