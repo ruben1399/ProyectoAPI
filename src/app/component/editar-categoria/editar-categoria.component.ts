@@ -10,7 +10,7 @@ import { CategoriasService } from 'src/app/services/categorias.service';
 })
 export class EditarCategoriaComponent implements OnInit {
   @Input() categoria: Categorias;
-  loading=true;
+  loading = true;
 
 
   constructor(
@@ -20,10 +20,13 @@ export class EditarCategoriaComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     console.log(this.categoria);
-    this.categoria= await this.service.getCategory(this.activate.snapshot.paramMap['params']['id']);
-    this.loading=false;
-    
+    this.categoria = await this.service.getCategory(this.activate.snapshot.paramMap['params']['id']);
+    this.loading = false;
+
+
 
   }
-
+  async submit(): Promise<void> {
+    console.warn(await this.service.updateCategory(this.categoria));
+  }
 }
