@@ -6,7 +6,7 @@
       <label>Descripcion</label>
       <input [(ngModel)]="categoria.description" class='form-control' name='description' type="text">
 
-      <button type="submit" class="btn btn-primary m-2"  (click)="crearCategoria()">Añadir</button>
+      <button type="submit" [routerLink]="['/']" routerLinkActive="router-link-active"  class="btn btn-primary m-2"  (click)="crearCategoria()">Añadir</button>
 
     </form>
   </div>
