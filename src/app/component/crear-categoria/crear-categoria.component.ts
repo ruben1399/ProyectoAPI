@@ -8,7 +8,11 @@ import { CategoriasService } from 'src/app/services/categorias.service';
   styleUrls: ['./crear-categoria.component.scss']
 })
 export class CrearCategoriaComponent implements OnInit {
-categoria: Categorias
+categoria: Categorias= {
+  name:'',
+  description:''
+};
+
 
   constructor(private sCategorias: CategoriasService) { }
 
@@ -18,5 +22,7 @@ categoria: Categorias
   async crearCategoria():Promise<void> {
     await this.sCategorias.addCategory(this.categoria);
   }
-
+  async submit(): Promise<void> {
+    console.warn(await this.sCategorias.addCategory(this.categoria));
+  }
 }
