@@ -20,8 +20,8 @@
     <div class="card" style="width: 30em;" *ngFor='let item of resultadoBusq'>
       <p class="row justify-content-center m-2" *ngIf="nombre == this.resultadoBusq[0].name"> <b>Nombre:</b>
         {{item.name}}</p>
-      <a [hidden]='bRecarga' (click)="eliminar(this.resultadoBusq[0].id)" class="btn btn-danger my-1">Eliminar</a>
-      <a [hidden]='bRecarga'[routerLink]="['editar', this.resultadoBusq[0].id]" class="btn btn-primary my-1">Editar</a>
+      <a [hidden]='bRecarga || !bExito || nombre != this.resultadoBusq[0].name' (click)="eliminar(this.resultadoBusq[0].id)" class="btn btn-danger my-1">Eliminar</a>
+      <a [hidden]='bRecarga || !bExito || nombre != this.resultadoBusq[0].name'[routerLink]="['editar', this.resultadoBusq[0].id]" class="btn btn-primary my-1">Editar</a>
     </div>
 
     <app-listado-categorias *ngIf="!bExito || nombre != this.resultadoBusq[0].name"></app-listado-categorias>

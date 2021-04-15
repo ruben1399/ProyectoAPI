@@ -9,6 +9,7 @@ import { BuscadorComponent } from './component/buscador/buscador.component';
 import { FormsModule } from '@angular/forms';
 import { EditarCategoriaComponent } from './component/editar-categoria/editar-categoria.component';
 import { CrearCategoriaComponent } from './component/crear-categoria/crear-categoria.component';
+import { ContactoComponent } from './component/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CrearCategoriaComponent } from './component/crear-categoria/crear-categ
     ListadoCategoriasComponent,
     BuscadorComponent,
     EditarCategoriaComponent,
-    CrearCategoriaComponent
+    CrearCategoriaComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
